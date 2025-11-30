@@ -1,3 +1,4 @@
+import 'package:animation_examples/pages/implicit_byTweenAnimation.dart';
 import 'package:animation_examples/pages/implicity_built_in_example.dart';
 import 'package:animation_examples/pages/lottie_example.dart';
 import 'package:animation_examples/widgets/page_indicator.dart';
@@ -17,13 +18,14 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
   final List<Widget> _pages = const [
     LottieExample(),
     ImplicityBuiltInExample(),
+    ImplicitBytweenanimation(),
   ];
 
   @override
   void initState() {
     super.initState();
     _pageViewController = PageController();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -36,11 +38,19 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
         centerTitle: true,
         title: _tabController.index == 0
             ? Text('lottie example')
-            : Text("built in implicity example"),
+            : _tabController.index == 1
+            ? Text("built in implicity example")
+            : Text(
+                "implict by tween animation",
+                style: TextStyle(color: Colors.white),
+              ),
       ),
       body: Stack(
         alignment: Alignment.bottomCenter,

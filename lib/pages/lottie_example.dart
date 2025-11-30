@@ -6,12 +6,14 @@ class LottieExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Lottie.asset("assets/lottie/business.json", fit: BoxFit.cover),
-        ],
+    return SafeArea(
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Lottie.asset("assets/lottie/business.json", fit: BoxFit.cover),
+          ],
+        ),
       ),
     );
   }
