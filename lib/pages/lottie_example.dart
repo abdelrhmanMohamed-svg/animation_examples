@@ -10,8 +10,6 @@ class LottieExample extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("lottie example", style: Theme.of(context).textTheme.titleLarge),
-          SizedBox(height: 20.0),
           Lottie.asset("assets/lottie/business.json", fit: BoxFit.cover),
         ],
       ),
