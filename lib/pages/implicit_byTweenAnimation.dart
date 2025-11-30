@@ -25,6 +25,7 @@ class _ImplicitBytweenanimationState extends State<ImplicitBytweenanimation> {
           duration: Duration(seconds: 2),
           curve: Curves.linear,
           tween: tween,
+          child: Image.asset("assets/images/Sun.png"),
           builder: (_, color, child) {
             return ColorFiltered(
               colorFilter: ColorFilter.mode(
@@ -32,7 +33,7 @@ class _ImplicitBytweenanimationState extends State<ImplicitBytweenanimation> {
                 BlendMode.modulate,
               ),
 
-              child: Image.asset("assets/images/Sun.png"),
+              child: child,
             );
           },
         ),
