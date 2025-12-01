@@ -1,3 +1,4 @@
+import 'package:animation_examples/pages/built_in_explicit_animation.dart';
 import 'package:animation_examples/pages/implicit_byTweenAnimation.dart';
 import 'package:animation_examples/pages/implicity_built_in_example.dart';
 import 'package:animation_examples/pages/lottie_example.dart';
@@ -19,13 +20,14 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
     LottieExample(),
     ImplicityBuiltInExample(),
     ImplicitBytweenanimation(),
+    BuiltInExplicitAnimation(),
   ];
 
   @override
   void initState() {
     super.initState();
     _pageViewController = PageController();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -47,8 +49,13 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
             ? Text('lottie example')
             : _tabController.index == 1
             ? Text("built in implicity example")
-            : Text(
+            : _tabController.index == 2
+            ? Text(
                 "implict by tween animation",
+                style: TextStyle(color: Colors.white),
+              )
+            : Text(
+                "BuiltInExplicitAnimation",
                 style: TextStyle(color: Colors.white),
               ),
       ),
