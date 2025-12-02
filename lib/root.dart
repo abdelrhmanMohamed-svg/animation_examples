@@ -1,3 +1,4 @@
+import 'package:animation_examples/pages/anthor_example_explicit_animtaion.dart';
 import 'package:animation_examples/pages/built_in_explicit_animation.dart';
 import 'package:animation_examples/pages/explicit_animation_build.dart';
 import 'package:animation_examples/pages/implicit_byTweenAnimation.dart';
@@ -22,14 +23,15 @@ class _RootState extends State<Root> with SingleTickerProviderStateMixin {
     ImplicityBuiltInExample(),
     ImplicitBytweenanimation(),
     BuiltInExplicitAnimation(),
-    ExplicitAnimationBuild()
+    ExplicitAnimationBuild(),
+    AnthorExampleExplicitAnimtaion()
   ];
 
   @override
   void initState() {
     super.initState();
     _pageViewController = PageController();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 6, vsync: this);
   }
 
   @override
